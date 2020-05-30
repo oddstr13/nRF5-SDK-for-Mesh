@@ -164,12 +164,13 @@ void hal_led_blink_stop(void)
     hal_led_mask_set(m_blink_mask, LED_MASK_STATE_OFF);
 }
 
+static const uint8_t m_board_led_list[LEDS_NUMBER] = LEDS_LIST;
 void hal_leds_init(void)
 {
-    for (uint32_t i = LED_START; i <= LED_STOP; ++i)
+    for (uint32_t i = 0; i < LEDS_NUMBER; ++i)
     {
-        NRF_GPIO->PIN_CNF[i] = LED_PIN_CONFIG;
-        NRF_GPIO->OUTSET = 1UL << i;
+        NRF_GPIO->PIN_CNF[m_board_led_list[i]]= LED_PIN_CONFIG;
+        NRF_GPIO->OUTSET = 1UL << m_board_led_list[i];
     }
 
     APP_ERROR_CHECK(app_timer_create(&m_blink_timer, APP_TIMER_MODE_REPEATED, led_timeout_handler));
