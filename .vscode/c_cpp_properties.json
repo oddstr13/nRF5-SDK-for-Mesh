@@ -1,0 +1,24 @@
+
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/../nRF5_SDK_16.0.0_98a08e2/**"
+            ],
+            "defines": [
+                "TOOLCHAIN=gccarmemb",
+                "PLATFORM=nrf52840_xxAA",
+                "BOARD=pca10059",
+                "SOFTDEVICE=s140_7.0.1",
+                "BOARD_PCA10059"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
