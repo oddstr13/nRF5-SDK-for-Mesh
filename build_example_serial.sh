@@ -5,5 +5,5 @@ SOFTDEVICE=s140_7.0.1
 mkdir -p build
 pushd build
     cmake -G "Unix Makefiles" -DTOOLCHAIN=gccarmemb -DPLATFORM=${PLATFORM} -DBOARD=${BOARD} -DSOFTDEVICE=${SOFTDEVICE} ..
-    make make serial_${PLATFORM}_${SOFTDEVICE}
+    make serial_${PLATFORM}_${SOFTDEVICE}
 popd
